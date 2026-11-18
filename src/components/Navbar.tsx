@@ -31,26 +31,10 @@ export default function Navbar() {
 
   return (
     <>
-      <nav
-        className={cn(
-          "fixed top-0 w-full z-50 transition-all duration-300 border-b",
-          scrolled || isOpen
-            ? "bg-[#050505]/90 backdrop-blur-md border-white/5 py-4"
-            : "bg-transparent border-transparent py-5 sm:py-6"
-        )}
-      >
+      <nav className={cn("fixed top-0 w-full z-50 transition-all duration-300 border-b", scrolled || isOpen ? "bg-[#050505]/90 backdrop-blur-md border-white/5 py-4" : "bg-transparent border-transparent py-5 sm:py-6")} >
         <div className="container mx-auto px-5 sm:px-6 h-full flex items-center justify-between">
-          <motion.a
-            href="#home"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-xl font-bold tracking-tighter font-poppins relative z-50"
-            onClick={() => setIsOpen(false)}
-          >
-            SACHIN<span className="text-[#c6ff00]">.</span>
+          <motion.a href="#home" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="text-xl font-bold tracking-tighter font-poppins relative z-50" onClick={() => setIsOpen(false)}>SACHIN<span className="text-[#c6ff00]">.</span>
           </motion.a>
-
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-4 lg:gap-6">
             {NAV_LINKS.map((link, i) => (
               <motion.a
@@ -66,29 +50,19 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4 relative z-50">
-            <button 
-              onClick={() => setIsOpen(!isOpen)} 
-              className="p-2 rounded-xl bg-white/5 border border-white/10 text-neutral-300 hover:text-white transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <X size={22} className="text-[#c6ff00]" /> : <Menu size={22} />}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-xl bg-white/5 border border-white/10 text-neutral-300 hover:text-white transition-colors" aria-label="Toggle menu">{isOpen ? <X size={22} className="text-[#c6ff00]" /> : <Menu size={22} />}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Full-Screen Overlay Drawer */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-0 z-40 bg-[#050505]/98 backdrop-blur-2xl flex flex-col justify-between pt-28 pb-10 px-6 md:hidden overflow-y-auto"
-          >
+          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }} className="fixed inset-0 z-40 bg-[#050505]/98 backdrop-blur-2xl flex flex-col justify-between pt-28 pb-10 px-6 md:hidden overflow-y-auto">
             <div className="flex flex-col gap-3 my-auto">
               <span className="text-[10px] font-mono uppercase tracking-[0.25em] text-[#c6ff00] mb-2">
                 Navigation
@@ -114,12 +88,7 @@ export default function Navbar() {
                 Connect Directly
               </span>
               <div className="flex items-center gap-4">
-                <a 
-                  href={SOCIAL_LINKS.email}
-                  className="text-xs font-mono text-[#c6ff00] hover:underline"
-                  onClick={() => setIsOpen(false)}
-                >
-                  svsachinsd@gmail.com
+                <a href={SOCIAL_LINKS.email} className="text-xs font-mono text-[#c6ff00] hover:underline" onClick={() => setIsOpen(false)}>svsachinsd@gmail.com
                 </a>
               </div>
             </div>

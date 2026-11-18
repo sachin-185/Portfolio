@@ -21,11 +21,11 @@ const CHATBOT_KNOWLEDGE = {
     "Hello! I can help you learn more about Sachin's technical profile. What would you like to know?",
     "Hey! Welcome to Sachin's portfolio. I'm here to answer your questions about his work."
   ],
-  about: "Sachin S is an AI Developer and Software Developer pursuing his B.Tech in Artificial Intelligence & Data Science at Rajalakshmi Institute of Technology (CGPA: 7.85, Graduating 2027). He is passionate about using LLMs, computer vision, and machine learning to build real-world systems.",
-  experience: "Sachin S has completed 5 internships:\n- **Plugzmart** (Feb - May 2026): Software Developer Intern. Built XGBoost LTR hardware selection engine & Isolation Forest EV anomalous monitoring.\n- **Google** (Sep 2025 - Feb 2026): Google Student Ambassador. Conducted workshops, promoted Google developer toolkits and APIs.\n- **Rajalakshmi Institute of Technology** (Oct - Nov 2025): Quantum Computing Intern. Researched quantum mechanics and simulated quantum circuits with Qiskit.\n- **Edunet Foundation** (Jul - Aug 2025): Artificial Intelligence Intern. Developed machine learning classifiers and neural network data pipelines in Python.\n- **Prodigy InfoTech** (Mar 2025): Cyber Security Intern. Analyzed application vulnerabilities and monitored encryption hashing protocols.",
-  projects: "Sachin has developed several featured projects:\n- **Browser MCP Agent (Gemini)**: A browser automation agent using Puppeteer, Streamlit, and Gemini API.\n- **AI Corporate Insights Dashboard**: A GPU-accelerated NLP pipeline (using PyTorch, BART, DistilBERT) for meeting summaries and attrition tracking.\n- **InternView AI**: An interview preparation app built with React 19, SQLite, Qwen2.5-7B, and Docker.\n- **OptiChargeAI**: Dynamic power allocation for DC EV fast chargers.\n- **ShopGo**: Autonomous marketplace with NLP user intent classification.",
-  achievements: "Sachin's coding achievements include:\n- **LeetCode**: Solved 551+ problems, received 13+ challenge badges, and holds the 200-day badge.\n- **SkillRack**: Solved 973+ problems in Python, C, and Java, earning 230+ bronze badges and Top 100 rank.\n- **LinkedIn**: 3.8K+ followers, posted 29+ educational posts over 2+ years.\n- **NPTEL**: Secured 84% (Silver + Elite certification) in IIT Kharagpur's Health Promotion course.",
-  skills: "Sachin's core skills are:\n- **Languages**: Python, Java, C, SQL, HTML/CSS, JavaScript\n- **Frameworks/Tech**: PyTorch, TensorFlow, FastAPI, React, RAG, Scikit-Learn, OpenCV\n- **Tools**: MongoDB, Firebase, ChromaDB, S3, Git/GitHub, Docker, Puppeteer, Streamlit, Postman",
+  about: "Sachin S is an AI Developer and Software Developer pursuing his B.Tech in Artificial Intelligence & Data Science at Rajalakshmi Institute of Technology (Graduating 2027). He is passionate about building edge/cloud AI systems, training machine learning models, and developing full-stack applications.",
+  experience: "Sachin S has completed engineering internships:\n- **Emertxe Information Technologies** (Aug – Sep 2026): Software Engineering Intern. Integrated JWT auth and RESTful APIs across 5 core services using Express.js and MongoDB; built client-facing AI assistant with React 19 and Redux Toolkit; slashed cloud inference costs by 80% via on-device Transformers.js (distilgpt2).\n- **Plugzmart** (Feb – May 2026): Software Developer (AI/ML) Intern. Developed an automated load-balancing engine for DC fast chargers (+32% efficiency) using XGBoost LTR models, Isolation Forest anomaly detector, and Qwen 2.5 LLM diagnostic copilot.\n- **Google**: Google Student Ambassador & Hackathon Mentor guiding teams through technical system architecture.",
+  projects: "Sachin has developed several featured projects:\n- **DriveLegal**: Hybrid edge/cloud legal compliance engine achieving <5ms p95 query latency via client-side NLP intent router in React/Vite that falls back to cloud RAG only for complex queries, with Express + ChromaDB retrieval pipeline.\n- **SmartCorp AI**: Full-stack corporate analytics dashboard (React, Flask, Firestore) with DistilBERT and BART-Large-CNN inference pipelines and Scikit-Learn risk-scoring engine.\n- **OptiChargeAI**: EV fast-charger dynamic allocation dashboard using XGBoost LTR model, Isolation Forest, and Qwen 2.5 (7B) on-premise diagnostic copilot (<150ms inference).\n- **Vortex WebAgent (Gemini MCP)**: Autonomous browser agent using Puppeteer, Streamlit, and Gemini API.\n- **InternView AI**: Interview preparation platform with React 19, SQLite, and Qwen2.5-7B.",
+  achievements: "Sachin's milestones and achievements include:\n- **CODEPULSE'26**: 1st Position Winner in online coding contest organized by ACM VIT Chennai & RIT.\n- **Smart India Hackathon (SIH 2024)**: Top 50 Finalist among 50+ internal institutional teams.\n- **Leadership**: Google Student Ambassador & Hackathon Mentor guiding teams on system architecture.\n- **Competitive Programming**: 575+ LeetCode problems (12+ badges, 200-Day Streak), 4+ stars on HackerRank, 1519+ peak rating on CodeChef, and 973+ problems on SkillRack (Top 100 rank).\n- **NPTEL**: 84% (Elite + Silver) in Health Promotion course from IIT Kharagpur.",
+  skills: "Sachin's core technical skills:\n- **Languages**: Python, Java, C, JavaScript\n- **Frameworks**: React.js, Node.js, Express.js, Flask, Streamlit\n- **Databases**: MongoDB, MySQL, ChromaDB\n- **AI & ML**: Gemini API, RAG, Hugging Face, Generative AI\n- **Tools & Platforms**: Firebase, Postman, Git/GitHub, Docker\n- **Core CS**: Data Structures & Algorithms (DSA), DBMS, Operating Systems (OS), OOP, Computer Networks (CN)",
   recommendations: "Sachin has received verified LinkedIn recommendations:\n- **Deepak Boopathi** (M.Kumarasamy College of Engineering): Met Sachin during a Quantum Computing workshop at SRM College of Technology, praising his patience, clarity in explaining complex topics, and eagerness to help.\n- **Rishika M** (Rajalakshmi Institute of Technology): Worked with Sachin on a college hackathon team where Sachin served as mentor and team guide, commending his problem-solving leadership and collaboration."
 };
 
@@ -135,10 +135,10 @@ export default function Chatbot() {
   }, [messages, isTyping, showSettings]);
 
   const presetPrompts = [
-    { label: "Plugzmart Experience", query: "Tell me about his Plugzmart internship" },
-    { label: "LeetCode Metrics", query: "What are his LeetCode stats?" },
-    { label: "Projects Details", query: "What projects has he built?" },
-    { label: "Core Skills", query: "What tech stack does he use?" }
+    { label: "Work Experience", query: "Tell me about his internships at Emertxe and Plugzmart" },
+    { label: "Featured Projects", query: "Tell me about DriveLegal and his projects" },
+    { label: "Achievements & CP", query: "What are his coding stats and achievements?" },
+    { label: "Technical Skills", query: "What tech stack does he use?" }
   ];
   const postProcessResponse = (baseResponse: string, currentPersona: Persona, promptInstructions: string): string => {
     let processed = baseResponse;
@@ -179,16 +179,16 @@ export default function Chatbot() {
     if (matchedQA) {
       return matchedQA.answer;
     }
-    if (q.includes("experience") || q.includes("work") || q.includes("intern") || q.includes("plugzmart") || q.includes("google") || q.includes("ambassador") || q.includes("quantum") || q.includes("edunet") || q.includes("prodigy") || q.includes("security")) {
+    if (q.includes("experience") || q.includes("work") || q.includes("intern") || q.includes("emertxe") || q.includes("plugzmart") || q.includes("google") || q.includes("ambassador") || q.includes("quantum") || q.includes("edunet") || q.includes("prodigy") || q.includes("security")) {
       return CHATBOT_KNOWLEDGE.experience;
     }
-    if (q.includes("achievement") || q.includes("leetcode") || q.includes("skillrack") || q.includes("award") || q.includes("stats") || q.includes("academic")) {
+    if (q.includes("achievement") || q.includes("codepulse") || q.includes("sih") || q.includes("hackathon") || q.includes("leetcode") || q.includes("skillrack") || q.includes("award") || q.includes("stats") || q.includes("academic") || q.includes("codechef") || q.includes("hackerrank")) {
       return CHATBOT_KNOWLEDGE.achievements;
     }
-    if (q.includes("project") || q.includes("mcp") || q.includes("internview") || q.includes("opticharge") || q.includes("shopgo")) {
+    if (q.includes("project") || q.includes("drivelegal") || q.includes("smartcorp") || q.includes("mcp") || q.includes("internview") || q.includes("opticharge") || q.includes("shopgo")) {
       return CHATBOT_KNOWLEDGE.projects;
     }
-    if (q.includes("skill") || q.includes("tech") || q.includes("language") || q.includes("framework")) {
+    if (q.includes("skill") || q.includes("tech") || q.includes("language") || q.includes("framework") || q.includes("database") || q.includes("core cs")) {
       return CHATBOT_KNOWLEDGE.skills;
     }
     if (q.includes("about") || q.includes("who is") || q.includes("sachin") || q.includes("profile")) {
@@ -200,7 +200,7 @@ export default function Chatbot() {
     if (q.includes("hi") || q.includes("hello") || q.includes("hey") || q.includes("greet")) {
       return CHATBOT_KNOWLEDGE.greetings[Math.floor(Math.random() * CHATBOT_KNOWLEDGE.greetings.length)];
     }
-    return "I can answer questions about Sachin's **experience** at Plugzmart, his **projects** (like Browser MCP Agent, InternView AI, or ShopGo), his coding **achievements** (LeetCode, SkillRack), **skills**, or **recommendations** from peers. What would you like to know?";
+    return "I can answer questions about Sachin's **experience** at Emertxe and Plugzmart, his **projects** (like DriveLegal, SmartCorp AI, OptiChargeAI), his **achievements** (CODEPULSE'26 1st Prize, SIH 2024 Finalist, LeetCode 575+), **skills**, or **recommendations** from peers. What would you like to know?";
   };
 
   const handleSendMessage = (text: string) => {

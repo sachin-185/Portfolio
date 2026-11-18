@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ACHIEVEMENTS } from "@/constants";
-import { Trophy, Code2, Award, Users } from "lucide-react";
+import { Trophy, Code2, Award, Users, Flame, Sparkles } from "lucide-react";
 
 export default function Achievements() {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -17,6 +17,10 @@ export default function Achievements() {
     switch (category) {
       case "Code":
         return <Code2 size={24} className="text-[#c6ff00]" />;
+      case "Hackathon":
+        return <Flame size={24} className="text-[#c6ff00]" />;
+      case "Leadership":
+        return <Sparkles size={24} className="text-[#c6ff00]" />;
       case "Growth":
         return <Users size={24} className="text-[#c6ff00]" />;
       case "Academics":
@@ -43,11 +47,15 @@ export default function Achievements() {
           {ACHIEVEMENTS.map((item, i) => {
             const isColSpan2 = i === 0 || i === 3;
             return (
-              <motion.div key={item.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+              <motion.div 
+                key={item.title} 
+                initial={{ opacity: 0, y: 30 }} 
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
                 onMouseMove={handleMouseMove}
-                className={`group relative p-6 sm:p-8 rounded-3xl bg-[#0a0a0a] border border-white/5 hover:border-[#c6ff00]/30 transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[200px] sm:min-h-[220px] ${isColSpan2 ? "md:col-span-2" : "md:col-span-1"}`} >
+                className={`group relative p-6 sm:p-8 rounded-3xl bg-[#0a0a0a] border border-white/5 hover:border-[#c6ff00]/30 transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[200px] sm:min-h-[220px] ${isColSpan2 ? "md:col-span-2" : "md:col-span-1"}`}
+              >
                 <div className="bento-card-glow" />
                 <div className="relative z-10 flex justify-between items-start gap-4">
                   <div className="p-2.5 sm:p-3 rounded-2xl bg-white/5 border border-white/10 shrink-0">

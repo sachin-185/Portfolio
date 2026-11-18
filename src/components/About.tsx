@@ -22,14 +22,7 @@ export default function About() {
           <div className="absolute -top-12 -right-12 w-48 h-48 bg-purple-500/5 rounded-full blur-3xl pointer-events-none" />
           <div className="flex flex-col gap-5 sm:gap-6 text-sm sm:text-base md:text-lg text-neutral-300 leading-relaxed font-light tracking-wide">
             {paragraphs.map((para, paraIdx) => (
-              <motion.p
-                key={paraIdx}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.6, delay: paraIdx * 0.12, ease: "easeOut" }}
-                className="text-neutral-300 leading-relaxed"
-              >
+              <motion.p key={paraIdx} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.6, delay: paraIdx * 0.12, ease: "easeOut" }} className="text-neutral-300 leading-relaxed">
                 {para}
               </motion.p>
             ))}
@@ -44,6 +37,3 @@ export default function About() {
     </section>
   );
 }
-
-
-

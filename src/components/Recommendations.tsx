@@ -25,10 +25,7 @@ export default function Recommendations() {
             Peer & Mentee Endorsements
           </div>
           <div className="flex items-center gap-3 sm:gap-4 mt-1 sm:mt-2">
-            <h2
-              className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight text-white"
-              style={{ fontFamily: "Anton, sans-serif" }}
-            >
+            <h2 className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight text-white" style={{ fontFamily: "Anton, sans-serif" }}>
               Recommendations<span className="text-[#c6ff00]">.</span>
             </h2>
             <span className="text-neutral-500 font-mono text-base sm:text-xl font-bold mt-1 sm:mt-2">
@@ -39,15 +36,10 @@ export default function Recommendations() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
           {RECOMMENDATIONS.map((rec, index) => (
-            <motion.div
-              key={rec.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.5, delay: index * 0.12, ease: "easeOut" }}
+            <motion.div key={rec.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }} transition={{ duration: 0.5, delay: index * 0.12, ease: "easeOut" }}
               onMouseMove={handleMouseMove}
-              className="group relative flex flex-col justify-between p-6 sm:p-9 rounded-3xl bg-[#0a0a0a] border border-white/5 hover:border-[#c6ff00]/40 hover:shadow-[0_10px_35px_-10px_rgba(198,255,0,0.15)] transition-all duration-300 overflow-hidden"
-            >
+              className="group relative flex flex-col justify-between p-6 sm:p-9 rounded-3xl bg-[#0a0a0a] border border-white/5 hover:border-[#c6ff00]/40 hover:shadow-[0_10px_35px_-10px_rgba(198,255,0,0.15)] transition-all duration-300 overflow-hidden">
               <div className="bento-card-glow" />
 
               <div className="absolute -bottom-2 right-4 text-white/[0.025] group-hover:text-[#c6ff00]/10 transition-colors pointer-events-none">
@@ -58,10 +50,7 @@ export default function Recommendations() {
                 <div className="flex items-start justify-between gap-3 sm:gap-4 pb-4 sm:pb-5 border-b border-white/5">
                   <div className="flex items-center gap-3 sm:gap-3.5 min-w-0">
                     <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-[#c6ff00]/20 to-neutral-800 border border-[#c6ff00]/30 flex items-center justify-center font-bold font-poppins text-sm sm:text-base text-[#c6ff00] shrink-0 shadow-inner">
-                      {rec.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
+                      {rec.name.split(" ").map((n) => n[0]).join("")}
                     </div>
 
                     <div className="flex flex-col min-w-0">
@@ -79,14 +68,7 @@ export default function Recommendations() {
                     </div>
                   </div>
 
-                  <a
-                    href={SOCIAL_LINKS.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#c6ff00]/40 text-[#0077b5] hover:text-[#c6ff00] transition-colors shrink-0"
-                    title="View on LinkedIn"
-                    aria-label="LinkedIn profile"
-                  >
+                  <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#c6ff00]/40 text-[#0077b5] hover:text-[#c6ff00] transition-colors shrink-0" title="View on LinkedIn" aria-label="LinkedIn profile">
                     <Linkedin size={18} />
                   </a>
                 </div>
@@ -99,15 +81,12 @@ export default function Recommendations() {
                       </span>
                     )}
                     {rec.relationship && (
-                      <span className="text-[11px] text-neutral-500 font-mono">
-                        • {rec.relationship}
+                      <span className="text-[11px] text-neutral-500 font-mono"> • {rec.relationship}
                       </span>
                     )}
                   </div>
                 )}
-
-                <p className="text-xs sm:text-base text-neutral-300 font-light leading-relaxed tracking-wide italic">
-                  &ldquo;{rec.text}&rdquo;
+                <p className="text-xs sm:text-base text-neutral-300 font-light leading-relaxed tracking-wide italic"> &ldquo;{rec.text}&rdquo;
                 </p>
               </div>
 
@@ -123,12 +102,7 @@ export default function Recommendations() {
         </div>
 
         <div className="flex justify-center mt-10 sm:mt-14">
-          <a
-            href={SOCIAL_LINKS.linkedin}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 rounded-full bg-[#0a0a0a] border border-white/10 text-white font-mono text-xs sm:text-sm hover:border-[#c6ff00] hover:text-[#c6ff00] transition-all duration-300 group shadow-lg"
-          >
+          <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 rounded-full bg-[#0a0a0a] border border-white/10 text-white font-mono text-xs sm:text-sm hover:border-[#c6ff00] hover:text-[#c6ff00] transition-all duration-300 group shadow-lg">
             <span>Read all endorsements on LinkedIn</span>
             <ArrowUpRight size={16} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#c6ff00]" />
           </a>

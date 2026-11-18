@@ -27,7 +27,7 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-8 mb-12 sm:mb-20">
           <div className="flex flex-col gap-4">
             <p className="text-xs uppercase tracking-[0.3em] text-[#c6ff00]">My Creations</p>
-            <h2 
+            <h2
               className="text-3xl md:text-5xl font-extrabold uppercase tracking-tight text-white mt-2"
               style={{ fontFamily: "Anton, sans-serif" }}
             >
@@ -36,17 +36,16 @@ export default function Projects() {
             <div className="h-1 w-16 bg-[#c6ff00] rounded-full" />
           </div>
 
-          
+
           <div className="flex p-1 bg-[#0a0a0a] rounded-xl border border-white/5 self-start md:self-auto overflow-x-auto max-w-full scrollbar-none">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-4 sm:px-5 py-2 rounded-lg text-xs font-mono tracking-wider uppercase transition-all duration-300 shrink-0 cursor-pointer ${
-                  filter === cat
-                    ? "bg-[#c6ff00] text-black font-bold shadow-md shadow-[#c6ff00]/10"
-                    : "text-neutral-500 hover:text-white"
-                }`}
+                className={`px-4 sm:px-5 py-2 rounded-lg text-xs font-mono tracking-wider uppercase transition-all duration-300 shrink-0 cursor-pointer ${filter === cat
+                  ? "bg-[#c6ff00] text-black font-bold shadow-md shadow-[#c6ff00]/10"
+                  : "text-neutral-500 hover:text-white"
+                  }`}
               >
                 {cat}
               </button>
@@ -65,37 +64,40 @@ export default function Projects() {
                 transition={{ duration: 0.4 }}
                 onMouseMove={handleMouseMove}
                 className="group relative flex flex-col rounded-3xl bg-[#0a0a0a] border border-white/5 overflow-hidden shadow-md hover:shadow-xl hover:border-[#c6ff00]/30 transition-all duration-500 min-h-[420px] sm:min-h-[460px]" >
-                <div className="bento-card-glow" /> 
+                <div className="bento-card-glow" />
                 <div className="relative aspect-video overflow-hidden border-b border-white/5 bg-neutral-900">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                    onError={(e) => {                  
+                    onError={(e) => {
                       e.currentTarget.style.display = "none";
                       e.currentTarget.parentElement?.insertAdjacentHTML('afterbegin', '<div class="absolute inset-0 flex items-center justify-center text-neutral-600"><svg class="w-16 h-16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>');
                     }}
                   />
-                  {/* Desktop Hover Overlay */}
                   <div className="hidden md:flex absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 items-end p-6">
-                     <a 
-                      href={project.link} 
-                      target="_blank" 
+                    <a href={project.link}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-3 bg-[#c6ff00] text-black font-bold text-sm rounded-xl flex items-center justify-center gap-1.5 hover:bg-[#c6ff00]/90 transition-colors shadow-lg">
-                       Explore Project <ExternalLink size={14} />
-                     </a>
+                      Explore Project <ExternalLink size={14} />
+                    </a>
                   </div>
                 </div>
 
                 <div className="p-5 sm:p-8 flex flex-col flex-1 relative z-10 justify-between">
                   <div className="flex flex-col gap-3 sm:gap-4">
                     <div className="flex flex-wrap gap-1.5">
-                      {project.tech.slice(0, 3).map((t) => (
+                      {project.tech.slice(0, 4).map((t) => (
                         <span key={t} className="text-[9px] uppercase font-mono tracking-wider px-2 py-1 bg-white/5 rounded text-neutral-400 border border-white/5">
                           {t}
                         </span>
                       ))}
+                      {project.tech.length > 4 && (
+                        <span className="text-[9px] uppercase font-mono tracking-wider px-1.5 py-1 text-neutral-500">
+                          +{project.tech.length - 4}
+                        </span>
+                      )}
                     </div>
                     <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-white group-hover:text-[#c6ff00] transition-colors duration-300 font-poppins leading-snug">
                       {project.title}
@@ -104,7 +106,7 @@ export default function Projects() {
                       {project.description}
                     </p>
                   </div>
-                  
+
                   <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-white/5 flex items-center justify-between">
                     <div className="flex items-center gap-1 text-xs text-[#c6ff00] font-mono tracking-wider">
                       <FolderGit2 size={14} />
@@ -112,16 +114,16 @@ export default function Projects() {
                     </div>
 
                     <div className="flex items-center gap-3">
-                      <a 
-                        href={project.link} 
-                        target="_blank" 
+                      <a
+                        href={project.link}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="md:hidden inline-flex items-center gap-1 text-xs font-bold text-[#c6ff00] hover:underline font-mono"
                       >
                         Explore <ExternalLink size={12} />
                       </a>
-                      <a 
-                        href={project.link} 
+                      <a
+                        href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-neutral-500 hover:text-white transition-colors duration-300"

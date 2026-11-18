@@ -4,7 +4,8 @@ import { PERSONAL_INFO, SOCIAL_LINKS } from "@/constants";
 import { Github, Linkedin, Twitter, Mail, ChevronDown, Download, Award, Briefcase } from "lucide-react";
 
 const ROLES = [
-  "B.Tech - AI&DS @RIT", "AI Full stack developer", "Ex-intern @Plugzmart"
+  "B.Tech - AI&DS @RIT",
+  "AI Full stack developer"
 ];
 
 export default function Hero() {

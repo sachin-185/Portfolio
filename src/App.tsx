@@ -26,8 +26,7 @@ export default function App() {
         {loading ? (
           <Loader key="loader" onComplete={() => setLoading(false)} />
         ) : (
-          <motion.div key="main" initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }} >
+          <motion.div key="main" initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} >
             <main className="min-h-screen bg-[#050505] text-neutral-100 font-poppins">
               <Navbar />
               <Hero />
@@ -37,8 +36,8 @@ export default function App() {
               <SkillsSlider />
               <Projects />
               <Achievements />
-              <Certificates />
               <Recommendations />
+              <Certificates />
               <Contact />
               <Chatbot />
 
