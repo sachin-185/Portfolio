@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -39,12 +37,12 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# User excluded: docs, pptx, pdf, img, etc.
-*.pdf
+# Excluded per request: docs, pptx, pdf, images, media
 *.doc
 *.docx
 *.ppt
 *.pptx
+*.pdf
 *.png
 *.jpg
 *.jpeg
