@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05080f" />
+      <stop offset="50%" stop-color="#0a101d" />
+      <stop offset="100%" stop-color="#030508" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c6ff00" stop-opacity="0.3" />
+      <stop offset="50%" stop-color="#00e5ff" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c6ff00" />
+      <stop offset="100%" stop-color="#00e5ff" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.04" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGrad)" />
+  <rect width="800" height="450" fill="url(#grid)" />
+
+  <!-- Ambient Glow -->
+  <circle cx="400" cy="180" r="220" fill="url(#glowGrad)" />
+
+  <!-- Shield / Legal Emblem Frame -->
+  <g transform="translate(400, 155)">
+    <!-- Outer Shield -->
+    <path d="M 0 -85 Q 55 -85 70 -30 Q 75 45 0 90 Q -75 45 -70 -30 Q -55 -85 0 -85 Z" fill="#0d1526" stroke="#c6ff00" stroke-width="2.5" stroke-opacity="0.8" />
+    <!-- Inner Circuit lines -->
+    <path d="M -45 -10 L -20 -10 L 0 -35 L 20 -10 L 45 -10" fill="none" stroke="#00e5ff" stroke-width="2" stroke-dasharray="4,4" />
+    <!-- Balance Scales Icon -->
+    <path d="M 0 -55 L 0 45" stroke="#c6ff00" stroke-width="3" stroke-linecap="round" />
+    <path d="M -35 -30 L 35 -30" stroke="#c6ff00" stroke-width="3" stroke-linecap="round" />
+    <!-- Left Scale Pan -->
+    <path d="M -35 -30 L -50 0 L -20 0 Z" fill="#00e5ff" fill-opacity="0.3" stroke="#00e5ff" stroke-width="2" />
+    <!-- Right Scale Pan -->
+    <path d="M 35 -30 L 20 0 L 50 0 Z" fill="#c6ff00" fill-opacity="0.3" stroke="#c6ff00" stroke-width="2" />
+    <!-- Center Pivot -->
+    <circle cx="0" cy="-55" r="5" fill="#c6ff00" />
+    <circle cx="0" cy="45" r="7" fill="#00e5ff" />
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="295" font-family="'Inter', 'Poppins', 'Segoe UI', sans-serif" font-size="34" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">
+    DRIVE<tspan fill="#c6ff00">LEGAL</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text x="400" y="328" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" font-weight="500" fill="#94a3b8" text-anchor="middle" letter-spacing="3">
+    EDGE/CLOUD COMPLIANCE &amp; RAG RETRIEVAL ENGINE
+  </text>
+
+  <!-- Latency Badge -->
+  <g transform="translate(400, 355)">
+    <rect x="-105" y="0" width="210" height="24" rx="12" fill="#0c1626" stroke="#c6ff00" stroke-width="1" stroke-opacity="0.4" />
+    <circle cx="-85" cy="12" r="3.5" fill="#c6ff00" />
+    <text x="-70" y="16" font-family="monospace" font-size="10.5" fill="#c6ff00" font-weight="bold" letter-spacing="1">&lt;5ms p95 LATENCY • RAG</text>
+  </g>
+
+  <!-- Tech Stack Pills -->
+  <g transform="translate(400, 405)">
+    <text x="0" y="0" font-family="monospace" font-size="11" fill="#64748b" text-anchor="middle" letter-spacing="1.5">
+      REACT  •  NODE.JS  •  EXPRESS  •  CHROMADB  •  HUGGING FACE
+    </text>
+  </g>
+</svg>

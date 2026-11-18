@@ -1,4 +1,13 @@
-# dependencies
+
+# documents and presentations
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.odt
+*.rtf
+
 /node_modules
 /.pnp
 .pnp.*
@@ -8,47 +17,25 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
 /coverage
 
-# production / build output
+/.next/
+/out/
+
 /build
 /dist
-/out
-/.next/
 
-# misc
 .DS_Store
 *.pem
 
-# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
 .env*
 
-# vercel
 .vercel
 
-# typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# Excluded per request: docs, pptx, pdf, images, media
-*.doc
-*.docx
-*.ppt
-*.pptx
-*.pdf
-*.png
-*.jpg
-*.jpeg
-*.svg
-*.webp
-*.gif
-*.ico
-*.bmp
-*.tiff
